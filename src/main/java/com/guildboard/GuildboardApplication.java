@@ -8,7 +8,5 @@ public class GuildboardApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GuildboardApplication.class, args);
-		System.out.printf("terst");
 	}
-
 }

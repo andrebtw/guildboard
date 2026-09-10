@@ -6,4 +6,7 @@ import com.guildboard.Model.entity.Quest;
 
 public interface QuestRepository extends JpaRepository<Quest, Integer> {
 
+    Quest findById(int id);
+    Quest findBytitle(String title);
+
 }

@@ -1,4 +1,4 @@
-package com.guildboard.entity;
+package com.guildboard.Model.entity;
 
 import java.time.LocalDateTime;
 
@@ -28,6 +28,10 @@ public class Assignment {
     @Column
     private LocalDateTime completedAt;
 
+
+    public Assignment(){
+        
+    }
 
     public Assignment(int adventurerId, int questId, LocalDateTime assignedAt) {
         this.adventurerId = adventurerId;

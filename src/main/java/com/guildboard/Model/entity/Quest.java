@@ -1,4 +1,4 @@
-package com.guildboard.entity;
+package com.guildboard.Model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,10 +35,14 @@ public class Quest {
     @Column
     private String status;
 
+    public Quest() {
+    }
+
     public Quest(String title, String desc, String diff, int requiredLvl, int goldReward, int xpReward) {
         this.title = title;
         this.description = desc;
         this.difficulty = diff;
+        this.requiredLevel = requiredLvl;
         this.xpReward = xpReward;
         this.goldReward = goldReward;
         this.status = "todo";
@@ -50,6 +54,10 @@ public class Quest {
 
     public String getTitle(){
         return this.title;
+    }
+
+    public String getDescription(){
+        return this.description;
     }
 
     public String getDifficulty(){
@@ -80,6 +88,10 @@ public class Quest {
     public void setTitle(String title)
     {
         this.title = title;
+    }
+
+    public void setDescription(String desc){
+        this.description = desc;
     }
 
     public void setDifficulty(String diff)

@@ -1,4 +1,4 @@
-package com.guildboard.entity;
+package com.guildboard.Model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,6 +28,10 @@ public class Adventurer {
 
     @Column
     private int gold;
+
+    public Adventurer(){
+
+    }
 
     public Adventurer(String name, String characterClass, int level, int xp, int gold) {
         this.name = name;

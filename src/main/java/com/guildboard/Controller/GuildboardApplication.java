@@ -1,4 +1,4 @@
-package com.guildboard;
+package com.guildboard.Controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

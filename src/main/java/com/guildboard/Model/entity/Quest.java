@@ -2,6 +2,8 @@ package com.guildboard.Model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -20,8 +22,9 @@ public class Quest {
     @Column
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column
-    private String difficulty;
+    private Difficulty difficulty;
 
     @Column
     private int requiredLevel;
@@ -38,11 +41,11 @@ public class Quest {
     public Quest() {
     }
 
-    public Quest(String title, String desc, String diff, int requiredLvl, int goldReward, int xpReward) {
+    public Quest(String title, String description, Difficulty difficulty, int requiredLevel, int goldReward, int xpReward) {
         this.title = title;
-        this.description = desc;
-        this.difficulty = diff;
-        this.requiredLevel = requiredLvl;
+        this.description = description;
+        this.difficulty = difficulty;
+        this.requiredLevel = requiredLevel;
         this.xpReward = xpReward;
         this.goldReward = goldReward;
         this.status = "todo";
@@ -60,7 +63,7 @@ public class Quest {
         return this.description;
     }
 
-    public String getDifficulty(){
+    public Difficulty getDifficulty(){
         return this.difficulty;
     }
 
@@ -94,7 +97,7 @@ public class Quest {
         this.description = desc;
     }
 
-    public void setDifficulty(String diff)
+    public void setDifficulty(Difficulty diff)
     {
         this.difficulty = diff;
     }

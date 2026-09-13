@@ -2,6 +2,7 @@ package com.guildboard.Model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -17,8 +18,9 @@ public class Adventurer {
     @Column
     private String name;
 
+    @Enumerated 
     @Column
-    private String characterClass;
+    private CharacterClass characterClass;
 
     @Column
     private int level;
@@ -33,7 +35,7 @@ public class Adventurer {
 
     }
 
-    public Adventurer(String name, String characterClass, int level, int xp, int gold) {
+    public Adventurer(String name, CharacterClass characterClass, int level, int xp, int gold) {
         this.name = name;
         this.characterClass = characterClass;
         this.level = level;
@@ -49,7 +51,7 @@ public class Adventurer {
         return this.name;
     }
 
-    public String getCharacterClass(){
+    public CharacterClass getCharacterClass(){
         return this.characterClass;
     }
 
@@ -73,7 +75,7 @@ public class Adventurer {
         this.name = name;
     }
 
-    public void setCharacterClass(String characterClass){
+    public void setCharacterClass(CharacterClass characterClass){
         this.characterClass = characterClass;
     }
 

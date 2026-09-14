@@ -1,4 +1,4 @@
-package com.guildboard.Service;
+package com.guildboard.Model.Service;
 
 public class AssignmentService {
     

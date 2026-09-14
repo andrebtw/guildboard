@@ -1,0 +1,13 @@
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/GuildboardApplication.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/entity/Adventurer.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/entity/Assignment.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/entity/CharacterClass.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/entity/Difficulty.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/entity/Quest.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/entity/QuestStatus.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/repository/AdventurerRepository.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/repository/AssignmentRepository.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Model/repository/QuestRepository.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Service/AdventurerService.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Service/AssignmentService.java
+/mnt/c/Users/achra/OneDrive/Desktop/project/guildboard/src/main/java/com/guildboard/Service/QuestService.java

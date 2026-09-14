@@ -1,4 +1,4 @@
-package com.guildboard.Service;
+package com.guildboard.Model.Service;
 
 import org.springframework.stereotype.Service;
 // import com.guildboard.Model.repository.QuestRepository;

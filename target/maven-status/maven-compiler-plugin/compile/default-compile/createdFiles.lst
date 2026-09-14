@@ -1,0 +1,13 @@
+com/guildboard/Model/entity/Difficulty.class
+com/guildboard/Model/repository/AssignmentRepository.class
+com/guildboard/Service/QuestService.class
+com/guildboard/Model/entity/Assignment.class
+com/guildboard/Model/entity/CharacterClass.class
+com/guildboard/Model/repository/QuestRepository.class
+com/guildboard/Model/entity/Quest.class
+com/guildboard/Service/AdventurerService.class
+com/guildboard/GuildboardApplication.class
+com/guildboard/Service/AssignmentService.class
+com/guildboard/Model/entity/Adventurer.class
+com/guildboard/Model/entity/QuestStatus.class
+com/guildboard/Model/repository/AdventurerRepository.class

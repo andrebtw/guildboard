@@ -13,7 +13,7 @@ public class Quest {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
 
     @Column
     private String title;
@@ -51,7 +51,7 @@ public class Quest {
         this.status = QuestStatus.AVAILABLE;
     }
 
-    public int getId(){
+    public Long getId(){
         return this.id;
     }
 
@@ -83,7 +83,7 @@ public class Quest {
         return this.status;
     }
 
-    public void setId(int id)
+    public void setId(Long id)
     {
         this.id = id;
     }

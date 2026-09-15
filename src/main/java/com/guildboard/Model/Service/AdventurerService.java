@@ -30,6 +30,19 @@ public class AdventurerService {
         return toResponseDto(adventurer);
     }
 
+    public AdventurerResponseDto update(Long id, AdventurerCreateDto dto){
+        Adventurer adventurer = adventurerRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("adventurer not found"));
+        adventurer.setName(dto.name());
+        adventurer.setCharacterClass(dto.characterClass());
+        Adventurer saved = adventurerRepository.save(adventurer);
+        return toResponseDto(saved);
+    }
+
+    public void  delete(long id){
+        adventurerRepository.deleteById(id);
+    }
+
     public AdventurerResponseDto create(AdventurerCreateDto dto) {
         Adventurer adventurer = new Adventurer(
             dto.name(),
@@ -41,6 +54,10 @@ public class AdventurerService {
         Adventurer saved = adventurerRepository.save(adventurer);
         return toResponseDto(saved);
     }
+
+    // public  List<AssignmentResponseDto> getHistory (Long id){
+    //     // recuperer toute les assignement avec leur statut
+    // }
 
     private AdventurerResponseDto toResponseDto(Adventurer adventurer) {
         return new AdventurerResponseDto(

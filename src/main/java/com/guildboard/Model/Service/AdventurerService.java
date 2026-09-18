@@ -3,6 +3,7 @@ package com.guildboard.Model.Service;
 import com.guildboard.Model.dto.AdventurerCreateDto;
 import com.guildboard.Model.dto.AdventurerResponseDto;
 import com.guildboard.Model.entity.Adventurer;
+import com.guildboard.Model.exception.ResourceNotFoundException;
 import com.guildboard.Model.repository.AdventurerRepository;
 import org.springframework.stereotype.Service;
 
@@ -26,13 +27,13 @@ public class AdventurerService {
 
     public AdventurerResponseDto getById(Long id) {
         Adventurer adventurer = adventurerRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Adventurer not found"));
+            .orElseThrow(() -> new ResourceNotFoundException("Adventurer not found"));
         return toResponseDto(adventurer);
     }
 
     public AdventurerResponseDto update(Long id, AdventurerCreateDto dto){
         Adventurer adventurer = adventurerRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("adventurer not found"));
+            .orElseThrow(() -> new ResourceNotFoundException("Adventurer not found"));
         adventurer.setName(dto.name());
         adventurer.setCharacterClass(dto.characterClass());
         Adventurer saved = adventurerRepository.save(adventurer);

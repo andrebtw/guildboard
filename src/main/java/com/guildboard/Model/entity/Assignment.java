@@ -6,6 +6,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,11 +18,13 @@ public class Assignment {
     @GeneratedValue
     private Long id;
 
-    @Column
-    private int adventurerId;
+    @ManyToOne
+    @JoinColumn(name = "adventurer_id", nullable = false)
+    private Adventurer adventurer;
 
-    @Column
-    private int questId;
+    @ManyToOne
+    @JoinColumn(name = "quest_id", nullable = false)
+    private Quest quest;
 
     @Column
     private LocalDateTime assignedAt;
@@ -33,9 +37,9 @@ public class Assignment {
         
     }
 
-    public Assignment(int adventurerId, int questId, LocalDateTime assignedAt) {
-        this.adventurerId = adventurerId;
-        this.questId = questId;
+    public Assignment(Adventurer adventurer, Quest quest, LocalDateTime assignedAt) {
+        this.adventurer = adventurer;
+        this.quest = quest;
         this.assignedAt = assignedAt;
         this.completedAt = null;
     }
@@ -44,12 +48,12 @@ public class Assignment {
         return this.id;
     }
 
-    public int getAdventurerId(){
-        return this.adventurerId;
+    public Adventurer getAdventurer(){
+        return this.adventurer;
     }
 
-    public int getQuestId(){
-        return this.questId;
+    public Quest getQuest(){
+        return this.quest;
     }
 
     public LocalDateTime getAssignedAt(){
@@ -64,12 +68,12 @@ public class Assignment {
         this.id = id;
     }
 
-    public void setAdventurerId(int id){
-        this.adventurerId = id;
+    public void setAdventurerId(Adventurer adventurer){
+        this.adventurer = adventurer;
     }
 
-    public void setQuestId(int id){
-        this.questId = id;
+    public void setQuestId(Quest quest){
+        this.quest = quest;
     }
 
     public void setAssignedAt(LocalDateTime datetime){

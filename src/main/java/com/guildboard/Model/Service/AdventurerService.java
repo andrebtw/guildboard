@@ -2,9 +2,14 @@ package com.guildboard.Model.Service;
 
 import com.guildboard.Model.dto.AdventurerCreateDto;
 import com.guildboard.Model.dto.AdventurerResponseDto;
+import com.guildboard.Model.dto.AssignmentResponseDto;
 import com.guildboard.Model.entity.Adventurer;
+import com.guildboard.Model.entity.Assignment;
 import com.guildboard.Model.exception.ResourceNotFoundException;
 import com.guildboard.Model.repository.AdventurerRepository;
+import com.guildboard.Model.repository.AssignmentRepository;
+
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +18,11 @@ import java.util.List;
 public class AdventurerService {
 
     private final AdventurerRepository adventurerRepository;
+    private final AssignmentRepository assignmentRepository ;
 
-    public AdventurerService(AdventurerRepository adventurerRepository) {
+    public AdventurerService(AdventurerRepository adventurerRepository, AssignmentRepository assignmentRepository) {
         this.adventurerRepository = adventurerRepository;
+        this.assignmentRepository = assignmentRepository;
     }
 
     public List<AdventurerResponseDto> getAll() {
@@ -56,9 +63,25 @@ public class AdventurerService {
         return toResponseDto(saved);
     }
 
-    // public  List<AssignmentResponseDto> getHistory (Long id){
-    //     // recuperer toute les assignement avec leur statut
-    // }
+    public List<AssignmentResponseDto> getHistory(Long id) {
+        Adventurer adventurer = adventurerRepository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Adventurer not found"));
+
+        return assignmentRepository.findByAdventurerId(adventurer.getId())
+            .stream()
+            .map(this::toAssignmentResponseDto)
+            .toList();
+    }
+
+    private AssignmentResponseDto toAssignmentResponseDto(Assignment assignment) {
+        return new AssignmentResponseDto(
+            assignment.getId(),
+            assignment.getAdventurer().getId(),
+            assignment.getQuest().getId(),
+            assignment.getAssignedAt(),
+            assignment.getCompletedAt()
+        );
+    }
 
     private AdventurerResponseDto toResponseDto(Adventurer adventurer) {
         return new AdventurerResponseDto(

@@ -4,8 +4,9 @@ import java.util.List;
 
 import com.guildboard.Model.Service.AdventurerService;
 import com.guildboard.Model.dto.AdventurerCreateDto;
-import com.guildboard.Model.dto.AdventurerCreateDto;
 import com.guildboard.Model.dto.AdventurerResponseDto;
+import com.guildboard.Model.dto.AssignmentResponseDto;
+import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,12 +40,12 @@ public class AdventurerController {
 
 
     @PostMapping 
-    public AdventurerResponseDto create(@RequestBody AdventurerCreateDto dto){
+    public AdventurerResponseDto create(@Valid @RequestBody AdventurerCreateDto dto){
         return adventurerService.create(dto);
     }
 
     @PutMapping ("/{id}")
-    public AdventurerResponseDto update(@PathVariable Long id,@RequestBody  AdventurerCreateDto dto){
+    public AdventurerResponseDto update(@PathVariable Long id,@Valid @RequestBody  AdventurerCreateDto dto){
         return  adventurerService.update(id, dto);
     }
 
@@ -52,5 +53,10 @@ public class AdventurerController {
     @DeleteMapping ("/{id}")
     public void delete(@PathVariable long id){
         adventurerService.delete(id);
+    }
+
+    @GetMapping("/{id}/history")
+    public List<AssignmentResponseDto> getHistory(@PathVariable Long id) {
+        return adventurerService.getHistory(id);
     }
 }

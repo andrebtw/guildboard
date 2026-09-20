@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BusinessRuleException.class)
     public ResponseEntity<ApiError> handleBusinessRule(BusinessRuleException ex) {
         ApiError error = new ApiError(422, ex.getCode(), ex.getMessage());
-        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(error);
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT).body(error);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

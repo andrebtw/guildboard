@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.guildboard.Model.entity.Adventurer;
 
-public interface AdventurerRepository extends JpaRepository<Adventurer, Integer> {
+public interface AdventurerRepository extends JpaRepository<Adventurer, Long> {
     
 }

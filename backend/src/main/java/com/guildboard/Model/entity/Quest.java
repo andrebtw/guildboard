@@ -2,6 +2,8 @@ package com.guildboard.Model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -12,7 +14,7 @@ public class Quest {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
 
     @Column
     private String title;
@@ -20,8 +22,9 @@ public class Quest {
     @Column
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column
-    private String difficulty;
+    private Difficulty difficulty;
 
     @Column
     private int requiredLevel;
@@ -32,23 +35,24 @@ public class Quest {
     @Column
     private int xpReward;
 
+    @Enumerated(EnumType.STRING)
     @Column
-    private String status;
+    private QuestStatus status;
 
     public Quest() {
     }
 
-    public Quest(String title, String desc, String diff, int requiredLvl, int goldReward, int xpReward) {
+    public Quest(String title, String desc, Difficulty diff, int requiredLvl, int goldReward, int xpReward) {
         this.title = title;
         this.description = desc;
         this.difficulty = diff;
         this.requiredLevel = requiredLvl;
         this.xpReward = xpReward;
         this.goldReward = goldReward;
-        this.status = "todo";
+        this.status = QuestStatus.AVAILABLE;
     }
 
-    public int getId(){
+    public Long getId(){
         return this.id;
     }
 
@@ -60,7 +64,7 @@ public class Quest {
         return this.description;
     }
 
-    public String getDifficulty(){
+    public Difficulty getDifficulty(){
         return this.difficulty;
     }
 
@@ -76,11 +80,11 @@ public class Quest {
         return this.xpReward;
     }
 
-    public String getStatus(){
+    public QuestStatus getStatus(){
         return this.status;
     }
 
-    public void setId(int id)
+    public void setId(Long id)
     {
         this.id = id;
     }
@@ -94,7 +98,7 @@ public class Quest {
         this.description = desc;
     }
 
-    public void setDifficulty(String diff)
+    public void setDifficulty(Difficulty diff)
     {
         this.difficulty = diff;
     }
@@ -114,7 +118,7 @@ public class Quest {
         this.xpReward = xp;
     }
 
-    public void setStatus(String status)
+    public void setStatus(QuestStatus status)
     {
         this.status = status;
     }

@@ -16,6 +16,15 @@ function Adventurers() {
       .then((data) => setAdventurers(data));
   }, []);
 
+  const handleEdit = (adventurer: Adventurer) => {
+    console.log("Edit: ", adventurer.name);
+  };
+
+  const handleDelete = (adventurer: Adventurer) => {
+
+    console.log("Deleted:", adventurer.name);
+  };
+
   return (
     <div>
       <h1>Adventuriers</h1>
@@ -26,7 +35,9 @@ function Adventurers() {
           <hr/>
           Nom: {adv.name}<br/>
           Niveau: {adv.level}<br/> 
-          Classe: {adv.characterClass}<br/>
+          Classe: {adv.characterClass}
+          <button onClick={() => handleEdit(adv)}>Modifier</button>
+          <button onClick={() => handleDelete(adv)}>Supprimer</button>
         </p>
       ))}
     <hr/>

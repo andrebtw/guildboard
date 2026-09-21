@@ -84,8 +84,8 @@ public class AssignmentService {
         adventurer.setXp(adventurer.getXp() + quest.getxpReward());
 
         // Montée de niveau automatique
-        while (adventurer.getXp() >= adventurer.getLevel() * 100) {
-            adventurer.setXp(adventurer.getXp() - adventurer.getLevel() * 100);
+        while (adventurer.getXp() >= adventurer.getLevel() * 150) {
+            adventurer.setXp(adventurer.getXp() - adventurer.getLevel() * 150);
             adventurer.setLevel(adventurer.getLevel() + 1);
         }
 

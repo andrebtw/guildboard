@@ -1,0 +1,25 @@
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-tab {
+  padding: 6px 12px;
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text, #6b6375);
+  cursor: pointer;
+}
+
+.filter-tab:hover {
+  background: var(--accent-bg, rgba(170, 59, 255, 0.1));
+}
+
+.filter-tab-active {
+  border-color: var(--accent-border, rgba(170, 59, 255, 0.5));
+  background: var(--accent-bg, rgba(170, 59, 255, 0.1));
+  color: var(--text-h, #08060d);
+  font-weight: 600;
+}

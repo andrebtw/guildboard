@@ -1,0 +1,19 @@
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-h, #08060d);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background: var(--accent-bg, rgba(170, 59, 255, 0.1));
+}

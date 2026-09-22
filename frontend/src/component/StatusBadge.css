@@ -1,0 +1,22 @@
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-available {
+  background: rgba(46, 158, 91, 0.15);
+  color: #2e9e5b;
+}
+
+.badge-in_progress {
+  background: rgba(217, 154, 0, 0.15);
+  color: #b07d00;
+}
+
+.badge-completed {
+  background: rgba(107, 99, 117, 0.15);
+  color: var(--text, #6b6375);
+}

@@ -1,0 +1,19 @@
+.panel-card {
+  border: 1px solid var(--border, #e5e4e7);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--bg, #fff);
+}
+
+.panel-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-card-title {
+  margin: 0;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,28 @@
+.btn {
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: var(--accent, #aa3bff);
+  color: #fff;
+}
+
+.btn-danger {
+  background: #d93025;
+  color: #fff;
+}
+
+.btn-neutral {
+  background: transparent;
+  border-color: var(--border, #e5e4e7);
+  color: var(--text-h, #08060d);
+}

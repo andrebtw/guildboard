@@ -1,0 +1,24 @@
+.difficulty-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.difficulty-easy {
+  background: #2e9e5b;
+}
+
+.difficulty-medium {
+  background: #d99a00;
+}
+
+.difficulty-hard {
+  background: #d9541e;
+}
+
+.difficulty-epic {
+  background: #8a3ffc;
+}
